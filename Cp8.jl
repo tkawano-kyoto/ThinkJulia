@@ -72,9 +72,8 @@ function caecer_cipher(str,shift)
 	
 end
 
-# test = "WATASINOMAMAEWANAKANODESU" 
+# test = "ZDWDVLQRQDPDHZDQDNDQRGHVXABC" <-- WATASINOMAMAEWANAKANODESU
 # caecer_cipher(test,3)
-# dicipher =  "ZDWDVLQRQDPDHZDQDNDQRGHVXABC"
 
 
 function caecer_dicipher(str,shift)
@@ -97,6 +96,5 @@ function caecer_dicipher(str,shift)
 	return cipher
 end
 
-# test = "ZDWDVLQRQDPDHZDQDNDQRGHVXABC"
+# test = WATASINOMAMAEWANAKANODESU"  <--  "ZDWDVLQRQDPDHZDQDNDQRGHVXABC"
 # caecer_dicipher(test,3)
-# cipher = "WATASINOMAMAEWANAKANODESU"
