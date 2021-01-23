@@ -18,31 +18,23 @@ function reverse(word)
     return r_word
 end
 
-function inbisect(w_array,word)
-    half=length(w_array) ÷ 2
-    i=1
-    j=length(w_array)
-    while half > length(word)
-        t_array = w_array
-        if t_array[half][1] >= word[1] # left
-            
-            j=half
-            t_array=t_array[i:j]
-            if word ∈ t_array
-                return true
-            end
-        else # right
-            i=half
-            t_array=t_array[i:j]
-           if word ∈ t_array
-                return true
-            end
-        end
-        half ÷= 2
-    end
+function inbisect(w_array, word)
+    low = 1
+    high = length(w_array)
+    while low <= high
+		mid =(low + high) ÷ 2
+		#mid = div((low + high),2)
+        if w_array[mid] == word
+            return true
+        elseif w_array[mid] < word
+            low = mid + 1
+        else
+            high = mid - 1
+		end
+	end
     return false
-    
 end
+
 
 function reversepairs(w_array)
     result = []
@@ -52,6 +44,7 @@ function reversepairs(w_array)
            #push!(result,temp)
             println(w_array[i]," ",temp)
         end
+        splice!(w_array,i)
     end
     # return result
 end
