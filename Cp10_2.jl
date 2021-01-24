@@ -8,7 +8,7 @@ function read_word()
     return w_array
 end
 
-function reverse(word)
+function reverse_word(word)
     r_word = ""
     i = length(word)
     while i >= 1
@@ -39,13 +39,12 @@ end
 function reversepairs(w_array)
     result = []
     for i in eachindex(w_array)
-        temp = reverse(w_array[i])
+        temp = reverse_word(w_array[i])
         if inbisect(w_array,temp) # true
-           #push!(result,temp)
-            println(w_array[i]," ",temp)
+            push!(result,w_array[i],temp)
+            #println(w_array[i]," ",temp)
         end
-        splice!(w_array,i)
     end
-    # return result
+    return result
 end
 
